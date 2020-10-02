@@ -7,7 +7,7 @@ namespace DynamicRows.Web.Models
     {
         public ApplicationDbContext() : base("DefaultConnection") { }
 
-        public DbSet<Default> Defaults { get; set; }
-        public DbSet<Item> Items { get; set; }
+        public DbSet<DefaultEntity> Defaults { get; set; }
+        public DbSet<ItemEntity> Items { get; set; }
     }
 }

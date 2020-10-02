@@ -7,7 +7,7 @@ using System.Web;
 
 namespace DynamicRows.Web.Models
 {
-    public class Item
+    public class ItemEntity
     {
         [Key]
         public int Id { get; set; }
@@ -20,10 +20,10 @@ namespace DynamicRows.Web.Models
 
         [ForeignKey(nameof(Default))]
         public int DefaultId { get; set; }
-        public virtual Default Default { get; set; }
+        public virtual DefaultEntity Default { get; set; }
     }
 
-    public class Default
+    public class DefaultEntity
     {
         [Key]
         public int Id { get; set; }
@@ -31,6 +31,6 @@ namespace DynamicRows.Web.Models
         [Required]
         public string Name { get; set; }
 
-        public virtual List<Item> Items { get; set; }
+        public virtual List<ItemEntity> Items { get; set; }
     }
 }

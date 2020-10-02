@@ -37,10 +37,10 @@ namespace DynamicRows.Web.Controllers
             if (!ModelState.IsValid)
                 return View(ModelState);
 
-            var defaultEntity = new Default
+            var defaultEntity = new DefaultEntity
             {
                 Name = model.Name,
-                Items = model.Items?.Select(i => new Item { Name = i.Name, Number = i.Number }).ToList()
+                Items = model.Items?.Select(i => new ItemEntity { Name = i.Name, Number = i.Number }).ToList()
             };
 
             var context = new ApplicationDbContext();
@@ -79,38 +79,5 @@ namespace DynamicRows.Web.Controllers
 
             return View(model);
         }
-    }
-
-    public class DefaultCreate
-    {
-        public string Name { get; set; }
-        public List<ItemCreate> Items { get; set; }
-    }
-
-    public class ItemCreate
-    {
-        public string Name { get; set; }
-        public int Number { get; set; }
-    }
-
-    public class DefaultListItem
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int ItemCount { get; set; }
-    }
-
-    public class DefaultDetail
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public List<ItemDetail> Items { get; set; }
-    }
-
-    public class ItemDetail
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Number { get; set; }
     }
 }
