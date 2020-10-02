@@ -46,7 +46,7 @@ namespace DynamicRows.Web.Controllers
             var context = new ApplicationDbContext();
             context.Defaults.Add(defaultEntity);
 
-            var itemCount = (model.Items?.Count).HasValue ? model.Items.Count : 0;
+            var itemCount = model.Items is null ? 0 : model.Items.Count;
             var expectedChangeCount = 1 + itemCount; 
             if (context.SaveChanges() != expectedChangeCount)
                 return View(model);
