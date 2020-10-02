@@ -20,18 +20,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ItemCount)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Detail", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemCount)
+            </td>
+            <td>
+                <div class="pull-right">
+                    @Html.ActionLink("Add Items", "AddItems", new { id = item.Id }, new { @class = "btn btn-sm btn-success" })
+                    @Html.ActionLink("Details", "Detail", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+                </div>
+            </td>
+        </tr>
+    }
 
 </table>

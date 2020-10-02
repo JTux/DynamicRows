@@ -27,11 +27,20 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Number)
                     </td>
+                    <td>
+                        @using (Html.BeginForm("DeleteItem", "Default", new { id = item.Id }, FormMethod.Post, null))
+                        {
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-sm btn-danger pull-right">Delete</button>
+                        }
+                    </td>
                 </tr>
             }
         </table>
     </div>
 }
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div>
+    @Html.ActionLink("Add Items", "AddItems", new { id = Model.Id }, new { @class = "btn btn-sm btn-success" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-sm" })
+    @Html.ActionLink("Delete Default", "DeleteDefault", new { id = Model.Id }, new { @class = "btn btn-sm btn-danger pull-right" })
+</div>

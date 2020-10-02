@@ -1,5 +1,6 @@
 ﻿using DynamicRows.Web.Controllers;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace DynamicRows.Web.Models
@@ -26,6 +27,8 @@ namespace DynamicRows.Web.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        [DisplayName("Item Count")]
         public int ItemCount { get; set; }
     }
 
@@ -41,5 +44,12 @@ namespace DynamicRows.Web.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Number { get; set; }
+    }
+
+    public class DefaultItemCreate
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<ItemCreate> Items { get; set; }
     }
 }

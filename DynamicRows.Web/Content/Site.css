@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.btn, h1, h2, h3, h4, h5, h6, button, a, th {
+    text-transform: uppercase;
+    font-weight: bold;
+}

@@ -1,0 +1,37 @@
+﻿<div class="table-bordered text-uppercase" style="padding: 1rem; border-radius: 1rem;">
+    <h3 class="text-center" style="margin-top: 0;">Items</h3>
+    <hr />
+
+    <div class="form-group">
+        <div class="col-md-12 text-right">
+            <button id="add" type="button" class="btn btn-success text-uppercase" style="font-weight: bold;">+ Add Item</button>
+        </div>
+    </div>
+
+    <table id="itemTable" class="table table-bordered">
+        <thead style="font-weight: bold;">
+            <tr class="text-center">
+                <td>Name</td>
+                <td>Number</td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    var counter = 0;
+    $(function () {
+        $('#add').click(function () {
+            $('<tr id="tablerow' + counter + '"><td>' +
+                '<input type="text" class="form-control" style="max-width: 100%;" name="Items[' + counter + '].Name" value="" required="required" />' +
+                '</td>' +
+                '<td>' +
+                '<input type="number" class="form-control" style="max-width: 100%;" name="Items[' + counter + '].Number" value="" required="required" />' +
+                '</td>' +
+                '</tr>').appendTo('#itemTable');
+            counter++;
+            return false;
+        });
+    });
+</script>

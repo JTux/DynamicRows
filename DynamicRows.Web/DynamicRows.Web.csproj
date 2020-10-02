@@ -214,6 +214,8 @@
     <Content Include="Views\Default\Create.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\Detail.cshtml" />
+    <Content Include="Views\Shared\_ItemCreatePartial.cshtml" />
+    <Content Include="Views\Default\AddItems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

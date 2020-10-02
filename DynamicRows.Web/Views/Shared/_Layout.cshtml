@@ -8,31 +8,21 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body style="display:flex; flex-direction: column; height: 100vh;">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Dynamic Create Forms", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                </ul>
-            </div>
+            <ul class="nav navbar-nav" style="width: 100%; margin: auto; list-style: none; padding-top: .5rem;">
+                <li class="text-center" style="width: 100%; font-size: 2rem;">@Html.ActionLink("Dynamic Create Forms", "Index", "Home")</li>
+            </ul>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year</p>
-        </footer>
     </div>
+    <div style="flex-grow: 1;"></div>
+    <footer class="text-center">
+        <p>&copy; @DateTime.Now.Year</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
